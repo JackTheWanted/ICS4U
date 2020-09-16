@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0F66767E-E7D3-42FF-9935-52A027311A98}</ProjectGuid>
+    <ProjectGuid>{C49A8794-94F0-4ABF-A9E3-1937C73DE53C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Windows_Forms_Practice</RootNamespace>
-    <AssemblyName>Windows Forms Practice</AssemblyName>
+    <RootNamespace>Part_3b_Getting_Input</RootNamespace>
+    <AssemblyName>Part 3b Getting Input</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,9 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -80,9 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Windows Forms Practice.sln" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
