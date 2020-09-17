@@ -21,7 +21,7 @@ namespace Part_5___Decisions
             }
             else
             {
-                 
+
                 if (age > 18)
                 {
                     Console.WriteLine("Adult");
@@ -46,15 +46,15 @@ namespace Part_5___Decisions
                 {
                     Console.WriteLine("Toddler");
                 }
-                
 
-           
+
+
             }
             //2
             Console.WriteLine("What category is the hurricane?");
             int strength;
             Int32.TryParse(Console.ReadLine(), out strength);
-            
+
             switch (strength)
             {
                 case 1:
@@ -77,8 +77,39 @@ namespace Part_5___Decisions
                     break;
             }
             //3
+            Random generator = new Random();
 
-                Console.ReadLine();
+            int ranNum = generator.Next(2, 7);
+            int chosenNum;
+            Console.WriteLine($"The random number is {ranNum}, please enter a larger number.");
+           
+            if (!Int32.TryParse(Console.ReadLine(), out chosenNum))
+            {
+                Console.WriteLine("Error");
+            }
+            else
+            {
+                if (chosenNum % ranNum == 0)
+                {
+                    Console.WriteLine("Divisible");
+                }
+                    
+                else if (chosenNum % ranNum != 0)
+                {
+                    Console.WriteLine("Not Divisible");
+                }
+
+
+
+
+            }
+                
+
+
+
+
+
+            Console.ReadLine();
         }
     }
 }
