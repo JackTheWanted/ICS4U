@@ -43,12 +43,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.winCount = new System.Windows.Forms.Label();
             this.lossCount = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.grpPlayerChoice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.choiceScissors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.choicePaper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.choiceRock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgOpponent)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -201,11 +205,39 @@
             this.lossCount.TabIndex = 16;
             this.lossCount.Text = "0";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(533, 293);
+            this.panel1.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(191, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(170, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "How To Play Rock Paper Scissors";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "label6";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lossCount);
             this.Controls.Add(this.winCount);
             this.Controls.Add(this.label4);
@@ -227,6 +259,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.choiceRock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgOpponent)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,6 +282,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label winCount;
         private System.Windows.Forms.Label lossCount;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
 

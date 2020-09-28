@@ -14,6 +14,8 @@ namespace Mini_Project_Rock_Paper_Scissors
     {
         Random generator = new Random();
         int playerState = 0;
+        int losses = 0;
+        int wins = 0;
         public Form1()
         {
             InitializeComponent();
@@ -79,27 +81,40 @@ namespace Mini_Project_Rock_Paper_Scissors
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            imgPlayer.Image = Properties.Resources.choosing;
-            playerState = 0;
-
-            imgOpponent.Image = Properties.Resources.loading;
+            
             int randomCompChoice = generator.Next(1, 4);
 
-            while (playerState == 0) ;
-            if (randomCompChoice == 1)
-            {
-                imgOpponent.Image = Properties.Resources.rock;
-            }
+            if (playerState != 0)
+                if (randomCompChoice == 1)
+                {
+                    imgOpponent.Image = Properties.Resources.rock;
+                    if (playerState == 1)
+                    {
+                        imgPlayer.Image = Properties.Resources.choosing;
+                        randomCompChoice = generator.Next(1, 4);
 
-            else if (randomCompChoice == 2)
-            {
-                imgOpponent.Image = Properties.Resources.paper;
-            }
+                    }
+                    else if (playerState == 2)
+                    {
+                        wins += 1;
+                        winCount.Text = wins + "";
+                    }
+                    else if (playerState == 3)
+                    {
+                        losses += 1;
+                        lossCount.Text = losses + "";
+                    }
+                }
 
-            else if (randomCompChoice == 3)
-            {
-                imgOpponent.Image = Properties.Resources.scissors;
-            }
+                else if (randomCompChoice == 2)
+                {
+                    imgOpponent.Image = Properties.Resources.paper;
+                }
+
+                else if (randomCompChoice == 3)
+                {
+                    imgOpponent.Image = Properties.Resources.scissors;
+                }
 
         }
     }

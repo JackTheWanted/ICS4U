@@ -72,7 +72,7 @@ namespace Part_6___Looping_Problems
 
             } while (selection != 000);
 
-            Console.WriteLine($"The percentage of marks above 70% is {above / overall * 100}%");
+            Console.WriteLine($"The percentage of marks above 70% is {above / (overall - 1) * 100}%");
 
             //3
 
@@ -102,7 +102,7 @@ namespace Part_6___Looping_Problems
             }
 
 
-                Console.ReadLine();
+            Console.ReadLine();
 
 
 
