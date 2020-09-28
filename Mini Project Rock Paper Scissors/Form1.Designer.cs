@@ -43,16 +43,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.winCount = new System.Windows.Forms.Label();
             this.lossCount = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.instructionPanel = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnStart = new System.Windows.Forms.Button();
             this.grpPlayerChoice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.choiceScissors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.choicePaper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.choiceRock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgOpponent)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.instructionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -205,14 +211,20 @@
             this.lossCount.TabIndex = 16;
             this.lossCount.Text = "0";
             // 
-            // panel1
+            // instructionPanel
             // 
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(533, 293);
-            this.panel1.TabIndex = 17;
+            this.instructionPanel.Controls.Add(this.btnStart);
+            this.instructionPanel.Controls.Add(this.textBox1);
+            this.instructionPanel.Controls.Add(this.label10);
+            this.instructionPanel.Controls.Add(this.label9);
+            this.instructionPanel.Controls.Add(this.label8);
+            this.instructionPanel.Controls.Add(this.label7);
+            this.instructionPanel.Controls.Add(this.label6);
+            this.instructionPanel.Controls.Add(this.label5);
+            this.instructionPanel.Location = new System.Drawing.Point(0, 0);
+            this.instructionPanel.Name = "instructionPanel";
+            this.instructionPanel.Size = new System.Drawing.Size(533, 293);
+            this.instructionPanel.TabIndex = 17;
             // 
             // label5
             // 
@@ -226,18 +238,76 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 50);
+            this.label6.Location = new System.Drawing.Point(18, 52);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(305, 13);
             this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
+            this.label6.Text = "You must first click on the picture of the rock, paper, or scissors";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(422, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "After that, just click play and the computer will choose it\'s own option of the 3" +
+    " at random.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 100);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(406, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "The program will automatically calculate who won and add it to your win/loss reco" +
+    "rd. ";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 141);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(303, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "The Computer will automatically randomize again if there\'s a tie.";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 183);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(310, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Pick a new/the same choice and click play to do another round.";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(100, 227);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(324, 20);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "Rock beats Scissors, Paper beats Rock, and Scissors beats Paper";
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(195, 257);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(134, 23);
+            this.btnStart.TabIndex = 7;
+            this.btnStart.Text = "Click to Begin";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.instructionPanel);
             this.Controls.Add(this.lossCount);
             this.Controls.Add(this.winCount);
             this.Controls.Add(this.label4);
@@ -259,8 +329,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.choiceRock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgOpponent)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.instructionPanel.ResumeLayout(false);
+            this.instructionPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,9 +352,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label winCount;
         private System.Windows.Forms.Label lossCount;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel instructionPanel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
     }
 }
 

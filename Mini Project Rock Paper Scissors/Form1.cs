@@ -90,15 +90,15 @@ namespace Mini_Project_Rock_Paper_Scissors
                     imgOpponent.Image = Properties.Resources.rock;
                     if (playerState == 1)
                     {
-                        imgPlayer.Image = Properties.Resources.choosing;
-                        randomCompChoice = generator.Next(1, 4);
-
+                        btnPlay_Click(null, EventArgs.Empty);
                     }
+
                     else if (playerState == 2)
                     {
                         wins += 1;
                         winCount.Text = wins + "";
                     }
+
                     else if (playerState == 3)
                     {
                         losses += 1;
@@ -109,13 +109,60 @@ namespace Mini_Project_Rock_Paper_Scissors
                 else if (randomCompChoice == 2)
                 {
                     imgOpponent.Image = Properties.Resources.paper;
+                    if (playerState == 1)
+                    {
+                        losses += 1;
+                        lossCount.Text = losses + "";
+                    }
+
+                    else if (playerState == 2)
+                    {
+                        btnPlay_Click(null, EventArgs.Empty);
+                    }
+
+                    else if (playerState == 3)
+                    {
+                        wins += 1;
+                        winCount.Text = wins + "";
+                    }
                 }
 
                 else if (randomCompChoice == 3)
                 {
                     imgOpponent.Image = Properties.Resources.scissors;
+                    if (playerState == 1)
+                    {
+                        wins += 1;
+                        winCount.Text = wins + "";
+                    }
+
+                    else if (playerState == 2)
+                    {
+                        losses += 1;
+                        lossCount.Text = losses + "";
+                    }
+
+                    else if (playerState == 3)
+                    {
+                        btnPlay_Click(null, EventArgs.Empty);
+                    }
                 }
 
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            instructionPanel.Visible = false;
         }
     }
 }
