@@ -83,17 +83,16 @@ namespace Mini_Project_Rock_Paper_Scissors
         {
             
             int randomCompChoice = generator.Next(1, 4);
-
+            while (playerState == randomCompChoice)
+            {
+                randomCompChoice = generator.Next(1, 4);
+            }
             if (playerState != 0)
                 if (randomCompChoice == 1)
                 {
                     imgOpponent.Image = Properties.Resources.rock;
-                    if (playerState == 1)
-                    {
-                        btnPlay_Click(null, EventArgs.Empty);
-                    }
 
-                    else if (playerState == 2)
+                    if (playerState == 2)
                     {
                         wins += 1;
                         winCount.Text = wins + "";
@@ -109,15 +108,11 @@ namespace Mini_Project_Rock_Paper_Scissors
                 else if (randomCompChoice == 2)
                 {
                     imgOpponent.Image = Properties.Resources.paper;
+
                     if (playerState == 1)
                     {
                         losses += 1;
                         lossCount.Text = losses + "";
-                    }
-
-                    else if (playerState == 2)
-                    {
-                        btnPlay_Click(null, EventArgs.Empty);
                     }
 
                     else if (playerState == 3)
@@ -142,10 +137,6 @@ namespace Mini_Project_Rock_Paper_Scissors
                         lossCount.Text = losses + "";
                     }
 
-                    else if (playerState == 3)
-                    {
-                        btnPlay_Click(null, EventArgs.Empty);
-                    }
                 }
 
         }
