@@ -73,7 +73,7 @@ namespace Part_5___Decisions
                     Console.WriteLine("The hurricane reaches speed of 157 mph or higher 137 kt or higher 252 km / h or higher");
                     break;
                 default:
-                    Console.WriteLine("It is not strong enough to be considered a hurricane.");
+                    Console.WriteLine("It is not strong enough to be considered a hurricane, or is not a class of hurricane that exists.");
                     break;
             }
             //3
@@ -83,10 +83,11 @@ namespace Part_5___Decisions
             int chosenNum;
             Console.WriteLine($"The random number is {ranNum}, please enter a larger number.");
            
-            if (!Int32.TryParse(Console.ReadLine(), out chosenNum))
+            if (!Int32.TryParse(Console.ReadLine(), out chosenNum )|| chosenNum < ranNum)
             {
                 Console.WriteLine("Error");
             }
+
             else
             {
                 if (chosenNum % ranNum == 0)
