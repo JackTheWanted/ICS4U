@@ -12,6 +12,10 @@ namespace Mini_Project_Rock_Paper_Scissors
 {
     public partial class Form1 : Form
     {
+        Random generator = new Random();
+        int playerState = 0;
+        int losses = 0;
+        int wins = 0;
         public Form1()
         {
             InitializeComponent();
@@ -40,17 +44,116 @@ namespace Mini_Project_Rock_Paper_Scissors
         private void rockChoice(object sender, EventArgs e)
         {
             imgPlayer.Image = Properties.Resources.rock;
-
+            playerState = 1;
         }
 
         private void paperChoice(object sender, EventArgs e)
         {
             imgPlayer.Image = Properties.Resources.paper;
+            playerState = 2;
         }
 
         private void scissorsChoice(object sender, EventArgs e)
         {
             imgPlayer.Image = Properties.Resources.scissors;
+            playerState = 3;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void V_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            
+            int randomCompChoice = generator.Next(1, 4);
+            while (playerState == randomCompChoice)
+            {
+                randomCompChoice = generator.Next(1, 4);
+            }
+            if (playerState != 0)
+                if (randomCompChoice == 1)
+                {
+                    imgOpponent.Image = Properties.Resources.rock;
+
+                    if (playerState == 2)
+                    {
+                        wins += 1;
+                        winCount.Text = wins + "";
+                    }
+
+                    else if (playerState == 3)
+                    {
+                        losses += 1;
+                        lossCount.Text = losses + "";
+                    }
+                }
+
+                else if (randomCompChoice == 2)
+                {
+                    imgOpponent.Image = Properties.Resources.paper;
+
+                    if (playerState == 1)
+                    {
+                        losses += 1;
+                        lossCount.Text = losses + "";
+                    }
+
+                    else if (playerState == 3)
+                    {
+                        wins += 1;
+                        winCount.Text = wins + "";
+                    }
+                }
+
+                else if (randomCompChoice == 3)
+                {
+                    imgOpponent.Image = Properties.Resources.scissors;
+                    if (playerState == 1)
+                    {
+                        wins += 1;
+                        winCount.Text = wins + "";
+                    }
+
+                    else if (playerState == 2)
+                    {
+                        losses += 1;
+                        lossCount.Text = losses + "";
+                    }
+
+                }
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            instructionPanel.Visible = false;
         }
     }
 }
