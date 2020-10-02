@@ -128,7 +128,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Random Number Generator";
             ((System.ComponentModel.ISupportInitialize)(this.minimum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximum)).EndInit();
             this.ResumeLayout(false);

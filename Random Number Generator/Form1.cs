@@ -25,14 +25,32 @@ namespace Random_Number_Generator
 
         private void intClick_Click(object sender, EventArgs e)
         {
-            int randomInt = generator.Next((int)minimum.Value, (int)maximum.Value);
-            randomOutput.Text = randomInt + "";
+            if (maximum.Value <= minimum.Value)
+            {
+                randomOutput.Text = "Please select a larger maximum";
+            }
+
+            else if (maximum.Value > minimum.Value)
+            {
+                int randomInt = generator.Next((int)minimum.Value, (int)maximum.Value + 1);
+                randomOutput.Text = randomInt + "";
+            }
+                
         }
 
         private void doubleClick_Click(object sender, EventArgs e)
         {
-            double randomDouble = (new Random().NextDouble() * ((int)maximum.Value) + (int)minimum.Value);
-            randomOutput.Text = randomDouble + "";
+            if (maximum.Value <= minimum.Value)
+            {
+                randomOutput.Text = "Please select a larger maximum";
+            }
+
+            else if (maximum.Value > minimum.Value)
+            {
+                double randomDouble = generator.NextDouble() * ((int)maximum.Value - (int)minimum.Value) + (int)minimum.Value;
+                randomOutput.Text = randomDouble + "";
+            }
+            
         }
     }
 }
